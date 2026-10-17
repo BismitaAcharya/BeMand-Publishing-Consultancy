@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>BeMand — From Manuscript to Marketplace</title>
+<meta name="description" content="BeMand welcomes manuscripts for consideration for free print publishing, a store for printed books, and optional author services.">
+<meta property="og:title" content="BeMand — Your Story Deserves a Place in the World">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--pale:#EAF3E8;--sage:#DDEBDD;--fresh:#A9C9AC;--forest:#294C38;--text:#344238;--text2:#667368;--line:#DCE6DA;--on:#fff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#121a15;--pale:#18241d;--sage:#1f2f25;--fresh:#5f8a68;--forest:#A9C9AC;--text:#d8e4da;--text2:#9fb0a3;--line:#2b3b30;--on:#10241a}}
+html{scroll-padding-top:70px}*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 Inter,system-ui,sans-serif}
+h1,h2,h3{font-family:'DM Serif Display',Georgia,serif;font-weight:400;color:var(--forest);line-height:1.15;margin:0 0 .5em}
+h1{font-size:clamp(2.4rem,6vw,4rem)}h2{font-size:clamp(1.8rem,4vw,2.5rem)}h3{font-size:1.3rem}
+a{color:var(--forest)}p{margin:0 0 1em;max-width:68ch}
+.w{max-width:1080px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);border-bottom:1px solid var(--line);z-index:20}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:30}
+.nav{display:flex;align-items:center;gap:20px;min-height:64px;flex-wrap:wrap}
+.logo{font:1.6rem 'DM Serif Display',serif;color:var(--forest);text-decoration:none;margin-right:auto}
+nav{display:flex;gap:18px;flex-wrap:wrap}nav a{text-decoration:none;color:var(--text);font-weight:500;font-size:.95rem}nav a:hover,nav a[aria-current]{color:var(--forest);text-decoration:underline}
+.btn{display:inline-block;background:var(--forest);color:var(--on);padding:12px 22px;border-radius:999px;text-decoration:none;border:2px solid var(--forest);cursor:pointer;font:inherit;font-weight:600}
+.btn.o{background:transparent;color:var(--forest)}.btn:hover{opacity:.88}
+:focus-visible{outline:3px solid var(--fresh);outline-offset:2px}
+section{padding:64px 0}.alt{background:var(--pale)}
+.hero{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;padding:56px 20px}
+.stack{display:flex;gap:10px;align-items:flex-end;justify-content:center;height:300px}
+.bk{width:46px;border-radius:4px 4px 2px 2px;background:var(--fresh);box-shadow:inset -6px 0 0 rgba(0,0,0,.08)}
+.bk:nth-child(1){height:230px;background:var(--forest)}.bk:nth-child(2){height:270px}.bk:nth-child(3){height:210px;background:var(--sage)}.bk:nth-child(4){height:250px;background:var(--forest);opacity:.8}.bk:nth-child(5){height:190px}
+.bk.lean{height:240px;background:var(--sage);transform:rotate(9deg);transform-origin:bottom left;margin-left:20px;animation:r 1s ease-out both}@keyframes r{from{transform:rotate(0)}}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.g3{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.card{background:var(--bg);border:1px solid var(--line);border-radius:18px;padding:24px}
+.card.link{text-decoration:none;color:var(--text);display:block;transition:border-color .2s}.card.link:hover{border-color:var(--forest)}
+ol.steps{list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;counter-reset:s}
+ol.steps li{counter-increment:s;border-left:3px solid var(--fresh);padding-left:16px}ol.steps li::before{content:"Step " counter(s);display:block;font-weight:600;color:var(--forest);font-size:.9rem}
+.note{background:var(--sage);border-radius:12px;padding:14px 18px;font-size:.95rem;margin:16px 0}
+.empty{border:2px dashed var(--fresh);border-radius:18px;padding:40px;text-align:center;color:var(--text2)}
+label{display:block;font-weight:500;margin:14px 0 4px}
+input,select,textarea{width:100%;padding:11px 13px;border:1px solid var(--line);border-radius:10px;font:inherit;background:var(--bg);color:var(--text)}
+.err{color:#b3261e;font-size:.88rem;min-height:1em}
+.row{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:0 18px}
+.chk{display:flex;gap:10px;align-items:flex-start;margin-top:14px}.chk input{width:auto;margin-top:5px}.chk label{margin:0;font-weight:400}
+details{border-bottom:1px solid var(--line);padding:14px 0}summary{cursor:pointer;font-weight:600;color:var(--forest)}
+footer{background:#294C38;color:#EAF3E8;padding:40px 0;font-size:.92rem}footer a{color:#EAF3E8;margin-right:14px;display:inline-block}
+.tools{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px}.tools input,.tools select{flex:1;min-width:160px}
+.bar{height:8px;background:var(--sage);border-radius:9px;overflow:hidden;margin-top:8px}.bar i{display:block;height:100%;background:var(--forest);width:0;transition:width .4s}
+@media(max-width:760px){.hero{grid-template-columns:1fr}.stack{height:220px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style></head><body>
+<header><div class="w nav"><a class="logo" href="#/">BeMand</a>
+<nav aria-label="Main"><a href="#/publish">Publish a Book</a><a href="#/store">Store</a><a href="#/services">Author Services</a><a href="#/about">About</a><a href="#/resources">Resources</a></nav>
+<a class="btn" href="#/submit">Submit Your Manuscript</a></div></header>
+<main id="app" tabindex="-1"></main>
+<footer><div class="w"><p style="font:1.4rem 'DM Serif Display',serif;margin-bottom:8px">BeMand</p><p>From Manuscript to Marketplace.</p>
+<p><a href="#/publish">Publish</a><a href="#/store">Store</a><a href="#/services">Services</a><a href="#/about">About</a><a href="#/resources">Resources</a><a href="#/faqs">FAQs</a><a href="#/contact">Contact</a></p>
+<p><a href="#/privacy">Privacy Policy</a><a href="#/terms">Terms and Conditions</a><a href="#/agreement">Publishing Agreement and Author Rights</a><a href="#/store-policy">Sales, Shipping, Returns and Refunds</a></p></div></footer>
+<script>
+const BOOKS=[]; // Add genuine records only: {id,title,author,genre,desc,status,price}
+const GENRES=["Fiction","Nonfiction","Poetry","Children’s Books","Mythology and Folklore","Personal Development","Business and Professional Books","Other Genres"];
+const MAX_MB=10, EXT=["docx","pdf"];
+const SERVICES=[["Author Branding","Author positioning, professional biography, brand messaging, profile optimisation and visibility planning."],["Book Development","Manuscript assessment, structural development, editing, proofreading, formatting and content support."],["Book Launch","Launch planning, promotional copy, content calendars, reader outreach and post-launch visibility strategy."],["Publishing Consultancy","Publishing model evaluation, proposal development, publisher research, submission support, book positioning and career planning."]];
+const FAQ=[["Is publishing really free?","There is no upfront publishing fee for accepted, eligible books under the agreed terms. The exact inclusions will be listed before you sign anything. Some services may carry separate charges."],["Will every manuscript be accepted?","No. Open submission is not automatic acceptance. Each manuscript is reviewed against stated eligibility and publishing terms."],["Which formats do you publish?","Printed books only (paperback). BeMand does not publish e-books."],["Who owns the rights?","You keep your rights. Rights, royalties and sales terms will be set out in a Publishing Agreement you review before accepting."],["What is the commission?","BeMand intends to earn a commission on book sales. The percentage, print costs and payout method are not final and will be shared before an agreement is signed."],["Do I need paid services to be considered?","No. Paid services are optional and separate from free-publishing consideration."],["When can I buy books?","The BeMand Store is being built. Checkout opens only once printing, payment and shipping are ready."],["How long does review take?","BeMand has not set a response deadline yet. You will get an acknowledgement when you submit."]];
+const faqHtml=n=>FAQ.slice(0,n||99).map(f=>`<details><summary>${f[0]}</summary><p>${f[1]}</p></details>`).join("");
+const legal=(t,b)=>`<section><div class="w"><h1>${t}</h1><div class="note"><b>Draft for review.</b> ${b}</div><p>This page is a placeholder. BeMand must finalise and legally review it before the site accepts real submissions or payments.</p></div></section>`;
+const hdr=(t,s)=>`<section class="alt"><div class="w"><h1>${t}</h1><p>${s}</p></div></section>`;
+const bookCard=b=>`<a class="card link" href="#/book/${b.id}"><h3>${b.title}</h3><p>${b.author} · ${b.genre}</p><p>${b.desc}</p><p><b>${b.status}</b>${b.price?" · "+b.price:""}</p><span class="btn o">View Book</span></a>`;
+const enquiry=(id,opts)=>`<form class="card" data-form="enq" novalidate><h3>Send an enquiry</h3><label for="n${id}">Name</label><input id="n${id}" required autocomplete="name"><div class="err"></div><label for="e${id}">Email</label><input id="e${id}" type="email" required autocomplete="email"><div class="err"></div><label for="s${id}">Topic</label><select id="s${id}">${opts.map(o=>`<option>${o}</option>`).join("")}</select><label for="m${id}">Message</label><textarea id="m${id}" rows="4" required></textarea><div class="err"></div><p class="note">Prices are shared after review. No outcomes are promised.</p><button class="btn">Send enquiry</button><div class="out" role="status"></div></form>`;
+const P={
+"":()=>`<div class="w hero"><div><h1>Your Story Deserves a Place in the World.</h1><p>Have a manuscript ready? BeMand welcomes authors to submit their work for consideration for free print publishing. Discover books, connect with readers and build your identity as an author.</p><div class="cta"><a class="btn" href="#/submit">Submit Your Manuscript</a><a class="btn o" href="#/store">Explore the Store</a></div></div><div class="stack" aria-hidden="true"><div class="bk"></div><div class="bk"></div><div class="bk"></div><div class="bk"></div><div class="bk"></div><div class="bk lean"></div></div></div>
+<section class="alt"><div class="w g3"><a class="card link" href="#/publish"><h3>Publish</h3><p>Submit a manuscript for consideration for free print publishing.</p></a><a class="card link" href="#/store"><h3>Discover</h3><p>Explore books and authors through the BeMand Store.</p></a><a class="card link" href="#/services"><h3>Grow</h3><p>Explore author branding, publishing consultancy and book launch services.</p></a></div></section>
+<section><div class="w"><h2>How publishing works</h2><ol class="steps"><li>Submit your manuscript.</li><li>Receive a submission acknowledgement.</li><li>Complete the review and agreement process if selected.</li><li>Proceed with print preparation and publishing under the agreed terms.</li></ol><div class="note">Submission does not guarantee acceptance or publication.</div></div></section>
+<section class="alt"><div class="w"><h2>Featured books</h2>${BOOKS.length?`<div class="g3">${BOOKS.slice(0,3).map(bookCard).join("")}</div>`:`<div class="empty" style="background:var(--bg)"><p style="margin:0 auto 1em">Your next favourite read may be here soon. Explore BeMand’s publishing journey or submit your manuscript.</p><a class="btn o" href="#/publish">See the publishing journey</a></div>`}</div></section>
+<section><div class="w"><h2>Optional author services</h2><p>Separate from free-publishing consideration. Never required.</p><div class="g3">${SERVICES.map(s=>`<a class="card link" href="#/services"><h3>${s[0]}</h3><p>${s[1]}</p><span class="btn o">Enquire</span></a>`).join("")}</div></div></section>
+<section class="alt"><div class="w"><h2>Why BeMand</h2><div class="g3"><div class="card"><h3>Accessible publishing</h3><p>Open submissions for new and experienced writers.</p></div><div class="card"><h3>Transparent terms</h3><p>Rights, royalties and sales terms documented before you sign.</p></div><div class="card"><h3>Thoughtful support</h3><p>Optional help with branding, editing and launch.</p></div><div class="card"><h3>Made for readers</h3><p>A store built around discovering printed books.</p></div></div></div></section>
+<section><div class="w"><h2>Questions</h2>${faqHtml(5)}<p><a href="#/faqs">All FAQs</a></p></div></section>
+<section class="alt"><div class="w" style="text-align:center"><h2>Ready to Take the Next Step with Your Manuscript?</h2><a class="btn" href="#/submit">Start Your Submission</a></div></section>`,
+publish:()=>hdr("Publish a Book","BeMand offers free print publishing for eligible, accepted manuscripts. Paperbacks only.")+`<section><div class="w"><h2>What happens after you submit</h2><ol class="steps"><li>Complete the submission form.</li><li>Receive an acknowledgement and reference.</li><li>Editorial review. Status: Received, Under Review, More Information Required, Accepted or Declined.</li><li>If accepted, review and agree to the publishing terms. Print preparation and store listing are tracked separately.</li></ol>
+<div class="g3"><div class="card"><h3>Who can submit</h3><p>Authors who own or control the rights to their manuscript.</p></div><div class="card"><h3>Manuscript requirements</h3><p>DOCX or PDF, up to ${MAX_MB} MB. No other file types.</p></div><div class="card"><h3>Genres</h3><p>${GENRES.join(", ")}.</p></div><div class="card"><h3>What free includes</h3><p>No upfront publishing fee for accepted books under the agreed terms. Exact inclusions to be confirmed.</p></div><div class="card"><h3>What may cost extra</h3><p>Optional services such as editing, branding and marketing. Any other charge will be stated before you sign.</p></div><div class="card"><h3>Rights</h3><p>Copyright and royalty terms are in the <a href="#/agreement">Publishing Agreement</a>. No response deadline is set yet.</p></div></div>
+<p style="margin-top:24px"><a class="btn" href="#/submit">Submit Your Manuscript</a></p></div></section>`,
+submit:()=>hdr("Manuscript Submission","Submitting does not guarantee acceptance. Required fields are marked *.")+`<section><div class="w"><div class="note"><b>Setup pending:</b> secure manuscript storage and the admin review area are not connected yet. This form checks your entries, but nothing is sent or stored until a backend is configured.</div>
+<form id="sub" class="card" novalidate><div class="row"><div><label for="a">Author's full name *</label><input id="a" required autocomplete="name"><div class="err"></div></div><div><label for="em">Email address *</label><input id="em" type="email" required autocomplete="email"><div class="err"></div></div>
+<div><label for="t">Book title *</label><input id="t" required><div class="err"></div></div><div><label for="g">Genre *</label><select id="g" required><option value="">Choose a genre</option>${GENRES.map(g=>`<option>${g}</option>`).join("")}</select><div class="err"></div></div>
+<div><label for="l">Manuscript language *</label><input id="l" required><div class="err"></div></div><div><label for="wc">Estimated word count *</label><input id="wc" type="number" min="1" required><div class="err"></div></div>
+<div><label for="pn">Pen name</label><input id="pn"></div><div><label for="ph">Contact number</label><input id="ph" type="tel"></div></div>
+<label for="sy">Short synopsis *</label><textarea id="sy" rows="4" required></textarea><div class="err"></div>
+<label for="bio">Author biography</label><textarea id="bio" rows="2"></textarea><label for="nt">Notes for the editorial team</label><textarea id="nt" rows="2"></textarea>
+<label for="f">Manuscript file * (DOCX or PDF, up to ${MAX_MB} MB)</label><input id="f" type="file" accept=".docx,.pdf"><div class="err"></div><div class="bar" aria-hidden="true"><i id="pr"></i></div>
+<div class="chk"><input id="c1" type="checkbox"><label for="c1">I own or control the rights needed to submit this manuscript. *</label></div><div class="err"></div>
+<div class="chk"><input id="c2" type="checkbox"><label for="c2">I agree to the <a href="#/privacy">Privacy Policy</a> and the manuscript review process. *</label></div><div class="err"></div>
+<p style="margin-top:20px"><button class="btn">Check my submission</button></p><div id="so" role="status"></div></form></div></section>`,
+store:()=>hdr("BeMand Store","Paperback discovery. The store is being built, so checkout is not available yet.")+`<section><div class="w"><div class="tools"><input id="q" type="search" placeholder="Search by title or author" aria-label="Search"><select id="gf" aria-label="Genre"><option value="">All genres</option>${GENRES.map(g=>`<option>${g}</option>`).join("")}</select><select id="so2" aria-label="Sort"><option value="new">Newest</option><option value="title">Title</option></select></div><div id="res"></div><p style="margin-top:24px"><a class="btn" href="#/contact">Get Store Updates</a></p></div></section>`,
+services:()=>hdr("Author Services","Optional paid support, separate from free-publishing consideration. You never need to buy a package to be considered.")+`<section><div class="w"><div class="g3">${SERVICES.map(s=>`<div class="card"><h3>${s[0]}</h3><p>${s[1]}</p></div>`).join("")}</div></div></section><section class="alt"><div class="w" style="max-width:640px">${enquiry("s",SERVICES.map(s=>s[0]))}</div></section>`,
+about:()=>hdr("About BeMand","From Manuscript to Marketplace.")+`<section><div class="w"><p>BeMand is a publishing platform for printed books. It accepts manuscripts for consideration for free print publishing, is building a store where readers can discover paperbacks, and offers optional services for authors.</p><p>Company details, team and contact information will be added once supplied.</p></div></section>`,
+resources:()=>hdr("Author Resources and Blog","Guides on preparing a manuscript, positioning and launching a book.")+`<section><div class="w"><div class="empty"><p style="margin:0 auto 1em">Articles are coming soon. Meanwhile, see how publishing works.</p><a class="btn o" href="#/publish">How publishing works</a></div></div></section>`,
+contact:()=>hdr("Contact","Ask a question or request store updates.")+`<section><div class="w" style="max-width:640px">${enquiry("c",["General question","Store updates","Publishing question"])}</div></section>`,
+faqs:()=>hdr("FAQs","Answers are provisional where commercial terms are not final.")+`<section><div class="w">${faqHtml()}</div></section>`,
+privacy:()=>legal("Privacy Policy","Must describe what data is collected, how manuscripts are stored and who can access them."),
+terms:()=>legal("Terms and Conditions","General site terms."),
+agreement:()=>legal("Publishing Agreement and Author Rights","Must set out rights, royalties, commission, production costs, taxes, refunds and payout treatment. Commission percentage is not yet decided."),
+"store-policy":()=>legal("Store Sales, Shipping, Returns and Refund Policy","Printing partner, shipping provider and payment gateway are not yet chosen.")
+};
+function route(){const k=location.hash.replace(/^#\//,""),app=document.getElementById("app");
+if(k.startsWith("book/")){const b=BOOKS.find(x=>x.id===k.slice(5));app.innerHTML=b&&b.status!=="Unpublished"?hdr(b.title,b.author+" · "+b.genre)+`<section><div class="w"><p>${b.desc}</p><p><b>${b.status}</b></p>${b.status==="Available for Purchase"?"":'<p class="note">Purchasing is not available yet.</p>'}</div></section>`:hdr("Book not found","This book isn’t listed. Browse the store to see what’s available.")+`<section><div class="w"><a class="btn" href="#/store">Explore Books</a></div></section>`}
+else if(P[k])app.innerHTML=P[k]();else app.innerHTML=hdr("Page not found","That page doesn’t exist.")+`<section><div class="w"><a class="btn" href="#/">Go home</a></div></section>`;
+document.querySelectorAll("nav a").forEach(a=>a.toggleAttribute("aria-current",a.getAttribute("href")==="#/"+k));
+document.title=(k?k.replace("-"," ").replace(/^./,c=>c.toUpperCase())+" — ":"")+"BeMand";window.scrollTo(0,0);bind()}
+function errOf(el){let n=el.nextElementSibling;while(n&&!n.classList.contains("err"))n=n.nextElementSibling;return n}
+function check(form){let ok=true;form.querySelectorAll("[required]").forEach(el=>{let m="";if(!el.value.trim())m="Enter a value for this field.";else if(el.type==="email"&&!/^\S+@\S+\.\S+$/.test(el.value))m="Enter a valid email address.";const e=errOf(el);if(e)e.textContent=m;if(m)ok=false});return ok}
+function bind(){
+const sub=document.getElementById("sub");
+if(sub)sub.onsubmit=e=>{e.preventDefault();let ok=check(sub);const fi=document.getElementById("f"),f=fi.files[0];let m="";
+if(!f)m="Choose a manuscript file.";else{const x=f.name.split(".").pop().toLowerCase();if(!EXT.includes(x))m="Only DOCX or PDF files are accepted.";else if(f.size>MAX_MB*1048576)m="File is larger than "+MAX_MB+" MB."}
+errOf(fi).textContent=m;if(m)ok=false;
+["c1","c2"].forEach(i=>{const c=document.getElementById(i),er=c.parentElement.nextElementSibling;er.textContent=c.checked?"":"Confirm to continue.";if(!c.checked)ok=false});
+const o=document.getElementById("so");if(!ok){o.innerHTML='<p class="err">Fix the marked fields and try again.</p>';return}
+document.getElementById("pr").style.width="100%";o.innerHTML='<div class="note"><b>Checks passed.</b> Nothing was sent: secure storage and review are not connected yet, so there is no submission reference.</div>'};
+document.querySelectorAll("[data-form=enq]").forEach(fm=>fm.onsubmit=e=>{e.preventDefault();fm.querySelector(".out").innerHTML=check(fm)?'<div class="note">Looks good. Enquiry delivery is not connected yet, so nothing was sent.</div>':'<p class="err">Fix the marked fields.</p>'});
+const q=document.getElementById("q");if(q){const run=()=>{const s=q.value.toLowerCase(),g=document.getElementById("gf").value;let r=BOOKS.filter(b=>b.status!=="Unpublished"&&(!g||b.genre===g)&&(b.title+b.author).toLowerCase().includes(s));if(document.getElementById("so2").value==="title")r.sort((a,b)=>a.title.localeCompare(b.title));
+document.getElementById("res").innerHTML=r.length?`<div class="g3">${r.map(bookCard).join("")}</div>`:`<div class="empty"><p style="margin:0 auto">${BOOKS.length?"No books match. Clear the search or choose another genre.":"No books are listed yet. Approved titles will appear here. Submit a manuscript or ask for store updates."}</p></div>`};
+["q","gf","so2"].forEach(i=>document.getElementById(i).oninput=run);run()}}
+addEventListener("hashchange",route);route();
+</script></body></html>
